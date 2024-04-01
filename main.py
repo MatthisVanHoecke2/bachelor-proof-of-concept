@@ -2,16 +2,14 @@ from typing import Union
 from fastapi import FastAPI
 from model import Model
 from pydantic import BaseModel
+import os
 
 app = FastAPI()
 models = set()
+os.environ["OPENAI_API_KEY"] = "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"
 
 class Prompt(BaseModel):
     value: str
-
-@app.get("/")
-def read_root():
-    return {"Hello": "World"}
 
 @app.get("/start")
 def start_chat():
@@ -31,6 +29,11 @@ def read_request(uuid, prompt: Prompt):
     if(selected is None):
       return "Invalid UUID"
     return selected.getResponse(prompt.value)
+
+@app.get("/test")
+def test_data(prompt: Prompt):
+    selected = Model()
+    return selected.get_custom_data(prompt.value)
 
 
 def find_model(uuid):

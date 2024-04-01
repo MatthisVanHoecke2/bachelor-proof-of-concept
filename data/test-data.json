@@ -1,0 +1,16 @@
+{
+  "author": {
+    "name": "Matthis Van Hoecke",
+    "birthdate": "31/05/2003",
+    "occupation": "student"
+  },
+  "project": {
+    "subject": "Optimalisatie van AI Integratie in Web Applicaties",
+    "description": "De markt van AI oplossingen groeit enorm sterk. Deze oplossingen zijn echter niet direct bruikbaar voor eindgebruikers. Vaak moeten deze oplossingen geïntegreerd worden binnen webapplicaties. Vandaag is dit soort van integraties nog niet vanzelfsprekend. Er komen echter steeds meer integratieoplossingen voor handen. Binnen deze bachelorproef onderzochten we welke groepen van AI oplossingen er bestaan en welke integratietechnieken we kunnen aanwenden om deze bruikbaar te maken binnen webapplicaties. Hierbij komen termen als Langchain, Llama index, Tensorflow, Vector databases, WebAssembly, en nog een aantal anderen om de hoek kijken. Met het resultaat van dit onderzoek zouden architecten en developers sneller in staat moeten zijn om AI oplossingen te integreren in bestaande en nieuwe webapplicaties. De onderzoeker zal meerdere integratiemogelijkheden in kaart brengen en onderzoeken. Vervolgens zal hij een praktische aanpak nemen om één van deze technieken te testen. Hierbij wordt een webapplicatie ontwikkeld die gebruik maakt van de gekozen integratiemethode. Voor de keuze uit verschillende vormen van artificiële intelligentie zal de onderzoeker de meest voorkomende AI selecteren. De resultaten tonen aan dat de diverse onderzochte integratietechnieken wel degelijk geïmplementeerd kunnen worden in webapplicaties voor gebruik van de eindgebruikers. Aan de hand van deze vondsten kunnen we zeggen dat developers met gebruik van deze technieken, zelf artificiële intelligentie oplossingen kunnen implementeren in hun applicaties. Alhoewel dit onderzoek gebruikmaakt van verschillende soorten technieken, is het belangerijk om te vermelden dat er alternatieven beschikbaar zijn die mogelijk beter passen bij de soort applicatie dat ontwikkeld wordt.",
+    "goal": "Een bachelordiploma behalen"
+  },
+  "company": {
+    "name": "ACA Group",
+    "description": "IT company for developing scalable and sustainable solutions for their customers."
+  }
+}
