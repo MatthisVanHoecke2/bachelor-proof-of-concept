@@ -17,7 +17,7 @@ from rag.pipeline import build_rag_pipeline
 
 class Model():
   def __init__(self):
-    self.messages = ConversationBufferMemory()
+    self.messages = []
     self.uuid = uuid.uuid4()
     llm = ChatOllama(model="llama2", top_k=3)
     self.chat_engine=build_rag_pipeline(llm)
@@ -31,5 +31,9 @@ class Model():
     return text
 
   def getResponse(self, request):
-    response = self.chat_engine.invoke({"input": request, "chat_history": {}})
+    response = self.chat_engine.invoke({"input": request, "chat_history": self.messages.copy()})
+    self.messages.append({
+      "Human": request,
+      "Assistant": response["output"]
+    })
     return response
