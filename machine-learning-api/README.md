@@ -1,1 +1,1 @@
-# bachelor-proof-of-concept
+# bachelor-proof-of-concept API
