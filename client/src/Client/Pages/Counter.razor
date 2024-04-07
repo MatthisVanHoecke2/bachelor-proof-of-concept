@@ -1,0 +1,78 @@
+﻿@page "/llm"
+@using global::Shared.LLM;
+
+<div>
+    <PageTitle>Llama2</PageTitle>
+
+    <h1>Llama2</h1>
+
+    <MudContainer
+        MaxWidth="MaxWidth.ExtraLarge" 
+        Style="@($"background-color: {Colors.Grey.Lighten2}")"
+        Class="chat-container"
+    >
+        <MudStack Spacing="4" id="chat-content">
+            <MudStack Row="false" Spacing="0">
+                @foreach(string message in systemMessages)
+                {
+                    <MudText Typo="Typo.body2">
+                        @message
+                    </MudText>
+                }
+            </MudStack>
+            @for(int i = 0; i < chatMessages.Count; i++)
+            {
+                ChatMessage message = chatMessages[i];
+                @if(message.Sender.Equals(MessageSender.Assistant))
+                {
+                    int current = i;
+                    <MudStack Row Spacing="2" AlignItems="AlignItems.Start">
+                         <MudAvatar Color="Color.Info">L</MudAvatar>
+                         <MudStack Spacing="0">
+                             <MudText Typo="Typo.body1">Llama2</MudText>
+                             <MudText Typo="Typo.body2">
+                                @if (Loading && current == chatMessages.Count-1)
+                                {
+                                    <div class="loader"/>
+                                }
+                                else
+                                {
+                                    @message.Message
+                                }
+                            </MudText>
+                         </MudStack>
+                     </MudStack>
+                }
+                else
+                {
+                    <MudStack Row Spacing="2" AlignItems="AlignItems.Start">
+                         <MudAvatar Color="Color.Primary">Y</MudAvatar>
+                         <MudStack Spacing="0">
+                             <MudText Typo="Typo.body1">You</MudText>
+                             <MudText Typo="Typo.body2">
+                                 @message.Message
+                             </MudText>
+                         </MudStack>
+                     </MudStack>
+                }
+            }
+        </MudStack>
+    </MudContainer>
+
+    <MudStack Row>
+        <MudTextField @bind-Value="textfield"
+            OnKeyUp="OnEnter"
+            Variant="Variant.Outlined"
+        />
+        <MudStack Justify="Justify.Center">
+            <MudButton 
+                Color="Color.Info" 
+                Variant="Variant.Filled" 
+                Size="Size.Large" 
+                OnClick="OnSend" 
+                Disabled="Loading"
+            >Send</MudButton>
+        </MudStack>
+    </MudStack>
+</div>
+
