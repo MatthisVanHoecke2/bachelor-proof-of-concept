@@ -1,0 +1,12 @@
+chromadb==0.4.24
+fastapi==0.110.1
+keras==3.1.1
+langchain==0.1.14
+langchain_community==0.0.31
+langchain_core==0.1.40
+llama_index==0.10.27
+matplotlib==3.8.3
+numpy==1.26.4
+pydantic==2.6.4
+tensorflow==2.16.1
+tensorflow_intel==2.16.1
