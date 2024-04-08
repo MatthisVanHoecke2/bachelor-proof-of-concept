@@ -12,7 +12,7 @@ This is the back-end of the project, where we run and communicate with the model
 Before starting the API, we need to install all the required packages. To do this, first we need to install Python.<br>
 Navigate to [Python](https://www.python.org/downloads/) and click download, then run the installer and wait for it to finish.
 
-Once Python has been installed, make sure you run the following command from this directory:
+Once Python has been installed, make sure you run the following command from the same directory as this document:
 
     pip install -r requirements.txt
 
