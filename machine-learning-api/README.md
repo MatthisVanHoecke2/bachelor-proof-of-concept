@@ -65,7 +65,9 @@ The following routes are available to communicate with the API:
     "Closed chat"
 
 #### Request
-`POST /llm/response/{uuid}` - Get a response from a language model
+`POST /llm/response/{uuid}` - Get a response from a language model<br>
+
+    {"value":"Hello."}
 
 #### Response
     HTTP/1.1 200 OK
