@@ -10,16 +10,17 @@ This is the back-end of the project, where we run and communicate with the model
 
 ## Setup
 Before starting the API, we need to install all the required packages. To do this, first we need to install Python.<br>
-Navigate to [Python](https://www.python.org/downloads/) and click download, then run the installer and wait for it to finish.
+Navigate to [Python](https://www.python.org/downloads/) and click `Download`, then run the installer and wait for it to finish.
 
 Once Python has been installed, make sure you run the following command from the same directory as this document:
 
     pip install -r requirements.txt
 
-While that is running, we can install the **Ollama** server to communicate with a Large Language Model. Navigate to [Ollama](https://ollama.com/) and click download, then run the installer and wait for the installation to finish. 
+While that is running, we can install the **Ollama** server to communicate with a Large Language Model.<br>
+Navigate to [Ollama](https://ollama.com/) and click `Download`, then run the installer and wait for the installation to finish. 
 
 ## Running
-Before we can run our application, we first need to start ollama, if it has not started automatically.
+Before we can run our application, we first need to start ollama.
 
 To run Ollama, you have two options:
 - Run with the .exe file
