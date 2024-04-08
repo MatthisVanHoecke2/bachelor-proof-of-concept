@@ -9,6 +9,8 @@ To start the application, please execute the following command:
 
     dotnet run --project "src/Client"
 
+The client can now be viewed at http://localhost:7133
+
 ## Usage
 
 
