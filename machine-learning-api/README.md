@@ -2,6 +2,12 @@
 
 This is the back-end of the project, where we run and communicate with the models.
 
+## Table Of Contents
+1. [Setup](#Setup)
+2. [Running](#Running)
+3. [Usage](#Usage)
+4. [Technologies](#Technologies)
+
 ## Setup
 Before starting the API, we need to install all the required packages. To do this, navigate to the folder of this document and run the following command:
 
@@ -80,7 +86,7 @@ The following routes are available to communicate with the API:
       "output":"The author of this project is Matthis Van Hoecke"
     }
 
-## Technologies used
+## Technologies
 [Ollama](https://ollama.com/) - For communicating with a language model<br>
 [LlamaIndex](https://docs.llamaindex.ai/en/stable/) - For adding custom data to the language model<br>
 [LangChain](https://python.langchain.com/docs/get_started/introduction/) - For getting a more natural response from the language model<br>
