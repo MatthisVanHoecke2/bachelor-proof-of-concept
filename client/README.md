@@ -24,9 +24,9 @@ To communicate with the AI, please navigate to the [model's page](https://localh
 
 <img src="https://github.com/MatthisVanHoecke2/bachelor-proof-of-concept/assets/101056688/5bccee39-b4ef-474b-8cda-f1b141897417" width="80%"/><br>
 
-Once the model has started, you can send messages through the message box at the bottom of the page. Please wait a while for the AI to respond.
+Once the model has started, you can send messages through the message box at the bottom of the page. Please wait a while for the AI to respond.<br>
 
-
+<img src="https://github.com/MatthisVanHoecke2/bachelor-proof-of-concept/assets/101056688/2e9a3c22-103a-41f2-8862-50f271433303" width="80%"/><br>
 
 
 ## Technologies
