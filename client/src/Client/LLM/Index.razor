@@ -1,16 +1,23 @@
 ﻿@page "/llm"
 
 <div>
-    <PageTitle>Llama2</PageTitle>
+    <PageTitle>Large Language Model</PageTitle>
 
-    <h1>Llama2</h1>
+    <h1>Large Language Model</h1>
+    <p>
+        For this proof-of-concept the author created an AI chat system running on LLaMa2 from Meta, 
+        which can access custom data about the author of this project as well as some information about the project itself.
+        You can use the interface below to communicate with the AI. Please keep in mind that the session will close after 5 minutes of no interaction.
+    </p>
+
+    <h2>Llama2</h2>
 
     <MudContainer
         MaxWidth="MaxWidth.ExtraLarge" 
         Style="@($"background-color: {Colors.Grey.Lighten2}")"
         Class="chat-container"
     >
-        <MudStack Spacing="4" id="chat-content">
+        <MudStack Spacing="4">
             <MudStack Row="false" Spacing="0">
                 @foreach(string message in systemMessages)
                 {

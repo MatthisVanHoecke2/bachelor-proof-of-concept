@@ -4,7 +4,7 @@ using Microsoft.JSInterop;
 using Project.Shared.LLM;
 
 namespace Project.Client.LLM;
-public partial class LLM : IDisposable, IAsyncDisposable
+public partial class Index : IDisposable, IAsyncDisposable
 {
     private string? Uuid { get; set; }
     private string textfield = default!;
@@ -14,7 +14,7 @@ public partial class LLM : IDisposable, IAsyncDisposable
 
     [Inject] IChatService chatService { get; set; } = default!;
     [Inject] IJSRuntime JS { get; set; } = default!;
-    [Inject] ILogger<LLM> Logger { get; set; } = default!;
+    [Inject] ILogger<Index> Logger { get; set; } = default!;
 
     private List<ChatMessage> chatMessages = new();
 
