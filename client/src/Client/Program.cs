@@ -1,9 +1,9 @@
 using Microsoft.AspNetCore.Components.Web;
 using Microsoft.AspNetCore.Components.WebAssembly.Hosting;
-using Client;
+using Project.Client;
 using MudBlazor.Services;
-using Shared.LLM;
-using Client.Services;
+using Project.Shared.LLM;
+using Project.Client.Services;
 
 string MLAPI = "http://localhost:8000/";
 

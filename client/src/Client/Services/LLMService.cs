@@ -1,7 +1,7 @@
-﻿using Shared.LLM;
+﻿using Project.Shared.LLM;
 using System.Net.Http.Json;
 
-namespace Client.Services;
+namespace Project.Client.Services;
 
 public class LLMService : IChatService
 {

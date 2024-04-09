@@ -4,7 +4,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace Shared.LLM;
+namespace Project.Shared.LLM;
 
 public class ChatHistoryDto
 {

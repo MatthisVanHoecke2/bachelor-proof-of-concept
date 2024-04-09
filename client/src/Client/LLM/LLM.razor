@@ -1,5 +1,4 @@
 ﻿@page "/llm"
-@using global::Shared.LLM;
 
 <div>
     <PageTitle>Llama2</PageTitle>
@@ -55,6 +54,9 @@
                          </MudStack>
                      </MudStack>
                 }
+            }
+            @if(!string.IsNullOrEmpty(endMessage)) {
+                <MudText Typo="Typo.body2">@endMessage</MudText>
             }
         </MudStack>
     </MudContainer>

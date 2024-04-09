@@ -1,4 +1,4 @@
-﻿namespace Shared.LLM;
+﻿namespace Project.Shared.LLM;
 
 public enum MessageSender
 {

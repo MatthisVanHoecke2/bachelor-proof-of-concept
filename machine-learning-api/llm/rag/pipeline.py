@@ -10,7 +10,8 @@ from llama_index.core.langchain_helpers.agents import (
     LlamaIndexTool,
 )
 import chromadb
-from template import template
+from .template import template
+import os
 
 # Method for loading custom data into the model
 def load_documents(docs_path):
@@ -77,7 +78,7 @@ def build_agent_executor(llm: ChatOllama, index: VectorStoreIndex):
 def build_rag_pipeline(llm):
 
     print("Building index...")
-    documents = load_documents("data") # Load the custom data
+    documents = load_documents("llm/data") # Load the custom data
     index = build_index(llm, documents) # Pass llm instance and data to method and build index
 
     print("Building chain")

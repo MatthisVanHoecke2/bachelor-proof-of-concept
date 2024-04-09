@@ -14,7 +14,7 @@
     <PackageReference Include="MudBlazor" Version="6.19.1" />
   </ItemGroup>
     <ItemGroup>
-	    <ProjectReference Include="..\Shared\Shared.csproj" />
+	    <ProjectReference Include="..\Shared\Project.Shared.csproj" />
     </ItemGroup>
 
 </Project>

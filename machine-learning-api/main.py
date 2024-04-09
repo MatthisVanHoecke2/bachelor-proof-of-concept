@@ -1,10 +1,6 @@
-from typing import Optional
 from fastapi import FastAPI
 from fastapi.middleware.cors import CORSMiddleware
-from llm.model.model import Model
-from pydantic import BaseModel
 from llm.model.modelService import ModelService, Prompt
-import os
 
 # Create a FastAPI instance
 app = FastAPI()

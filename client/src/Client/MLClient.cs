@@ -1,4 +1,4 @@
-﻿namespace Client;
+﻿namespace Project.Client;
 
 public class MLClient
 {
