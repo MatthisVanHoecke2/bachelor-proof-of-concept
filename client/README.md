@@ -12,6 +12,21 @@ To start the application, please execute the following command:
 The client can now be viewed at https://localhost:7133
 
 ## Usage
+The author has added two main features for is proof-of-concept project:
+- Large Language Model
+- Image Recognition
+
+### Large Language model
+The author implemented the Large Language Model LLaMa2 from Meta in this application to be used as an AI assistant.<br>
+The AI was given a tool so it can access the author's custom data using a text document.
+
+To communicate with the AI, please navigate to the [model's page](https://localhost:7133/llm).<br>
+
+<img src="https://github.com/MatthisVanHoecke2/bachelor-proof-of-concept/assets/101056688/5bccee39-b4ef-474b-8cda-f1b141897417" width="80%"/><br>
+
+Once the model has started, you can send messages through the message box at the bottom of the page. Please wait a while for the AI to respond.
+
+
 
 
 ## Technologies
