@@ -7,7 +7,7 @@ import threading
 TIMEOUT = 300
 
 # Wrapper class for LLMs
-class Model():
+class LLMModel():
   def __init__(self, stop_callback):
     self.stop_callback = stop_callback
     self.paused = False

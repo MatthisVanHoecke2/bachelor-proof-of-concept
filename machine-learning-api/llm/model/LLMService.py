@@ -1,5 +1,5 @@
 from typing import Optional
-from .model import Model
+from .LLMModel import LLMModel
 from pydantic import BaseModel
 
 # Prompt dto for passing a prompt to the LLM
@@ -7,13 +7,13 @@ class Prompt(BaseModel):
     value: str
 
 # Service class for keeping track of multiple models
-class ModelService:
+class LLMService:
   def __init__(self):
     self.models = set()
 
   # Start chat with a model and return a unique identifier
   def start_chat(self):
-    model = Model(self.stop_chat)
+    model = LLMModel(self.stop_chat)
     self.models.add(model)
     print(model.getUUID())
     return model.getUUID()
@@ -29,12 +29,12 @@ class ModelService:
 
   # Generate a response based on a given prompt
   def get_response(self, uuid: str, prompt: Prompt):
-    selected: Optional[Model] = self.__find_model(uuid)
+    selected: Optional[LLMModel] = self.__find_model(uuid)
     if(selected is None):
       return "Invalid UUID"
     return selected.getResponse(prompt.value)
 
-  def __find_model(self, uuid: str) -> Optional[Model]:
+  def __find_model(self, uuid: str) -> Optional[LLMModel]:
     for model in self.models:
         if(str(model.getUUID()) == uuid):
             return model
