@@ -1,18 +1,18 @@
 from cnn.data.loaddata import load_dataset
-from cnn.data.createmodel import create_model
+from cnn.data.createmodel import create_or_load_model
 from fastapi import UploadFile
 from keras import utils
 from keras.models import Sequential
 import tensorflow as tf
 import numpy as np
-from PIL import Image, ImageOps
+from PIL import Image
 from cnn.data.parameters import img_height, img_width
 
 class CNNModel():
   def __init__(self):
     train_ds, val_ds, class_names = load_dataset()
     self.class_names = class_names
-    self.model: Sequential = create_model(train_ds, val_ds, class_names)
+    self.model: Sequential = create_or_load_model(train_ds, val_ds, class_names)
 
   def get_class_names(self):
     return self.class_names

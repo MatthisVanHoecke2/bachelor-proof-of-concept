@@ -1,9 +1,10 @@
-from keras import layers
-from keras.models import Sequential
+from keras import layers, losses
+from keras.models import Sequential, load_model
 import tensorflow as tf
 from .parameters import img_height, img_width
+import os
 
-def create_model(train_ds: tf.data.Dataset, val_ds: tf.data.Dataset, class_names):
+def create_and_train_model(train_ds: tf.data.Dataset, val_ds: tf.data.Dataset, class_names):
   num_classes = len(class_names)
 
   # Create the model by stacking convolution layers
@@ -22,7 +23,7 @@ def create_model(train_ds: tf.data.Dataset, val_ds: tf.data.Dataset, class_names
 
   # Compile the model
   model.compile(optimizer='adam',
-              loss=tf.keras.losses.SparseCategoricalCrossentropy(from_logits=True),
+              loss=losses.SparseCategoricalCrossentropy(from_logits=True),
               metrics=['accuracy'])
   
   # Train the model with 10 epochs (train 10 times)
@@ -32,4 +33,16 @@ def create_model(train_ds: tf.data.Dataset, val_ds: tf.data.Dataset, class_names
     validation_data=val_ds,
     epochs=epochs
   )
+
   return model
+
+def create_or_load_model(train_ds, val_ds, class_names):
+    route = "cnn/model/saved/model.keras"
+    exists = os.path.isfile(route)
+
+    if(exists):
+      model = load_model(filepath=route, compile=True)
+    else:
+      model: Sequential = create_and_train_model(train_ds, val_ds, class_names)
+      model.save(route)
+    return model

@@ -1,52 +1,62 @@
 ﻿@page "/cnn"
 @inject HttpClient Http
 
-<PageTitle>Weather forecast</PageTitle>
+<PageTitle>Image Classifier</PageTitle>
 
-<h1>Weather forecast</h1>
+<h1>Image Classifier</h1>
 
-<p>This component demonstrates fetching data from the server.</p>
+<p>
+    The author added an image classifier using TensorFlow and Keras, please upload an image containing one of the following flowers: daisy, dandelion, rose, sunflower, tulip.
+    Once the image has been uploaded, please click <strong class="p-1 rounded mud-theme-primary">SUBMIT</strong> to send a request to the server. The model will then determine which flower is most likely to be shown in the image,
+    along with it's confidence score.
+</p>
 
-@if (forecasts == null)
-{
-    <p><em>Loading...</em></p>
-}
-else
-{
-    <table class="table">
-        <thead>
-            <tr>
-                <th>Date</th>
-                <th>Temp. (C)</th>
-                <th>Temp. (F)</th>
-                <th>Summary</th>
-            </tr>
-        </thead>
-        <tbody>
-            @foreach (var forecast in forecasts)
-            {
-                <tr>
-                    <td>@forecast.Date.ToShortDateString()</td>
-                    <td>@forecast.TemperatureC</td>
-                    <td>@forecast.TemperatureF</td>
-                    <td>@forecast.Summary</td>
-                </tr>
-            }
-        </tbody>
-    </table>
-}
-
-@code {
-    private WeatherForecast[]? forecasts;
-
-    public class WeatherForecast
-    {
-        public DateTime Date { get; set; }
-
-        public int TemperatureC { get; set; }
-
-        public string? Summary { get; set; }
-
-        public int TemperatureF => 32 + (int)(TemperatureC / 0.5556);
-    }
-}
+<MudForm Model="@model" @ref="form" Validation="@(ValidationRules.ValidateValue)" ValidationDelay="0" @bind-IsValid="@success" @bind-Errors="@errors">
+    <MudStack Spacing="5">
+        <MudStack Row AlignItems="AlignItems.Start" Justify="Justify.FlexStart">
+             <MudFileUpload T="IBrowserFile" Class="m-0" For="@(() => model.File)" Accept=".png, .jpg" FilesChanged="UploadFiles" MaximumFileCount="100">
+                 <ButtonTemplate>
+                     <MudButton HtmlTag="label"
+                                Variant="Variant.Filled"
+                                Color="Color.Primary"
+                                StartIcon="@Icons.Material.Filled.CloudUpload"
+                                for="@context.Id">
+                         Upload Image
+                     </MudButton>
+                 </ButtonTemplate>
+                 <SelectedTemplate>
+                     <MudText Style=@($"color: {Colors.Grey.Darken1}")>@model.File?.Name</MudText>
+                 </SelectedTemplate>
+             </MudFileUpload>
+             <div>
+                 <MudButton Variant="Variant.Filled" Color="Color.Primary" Class="ml-auto" OnClick="@(async () => await Submit())">Submit</MudButton>
+             </div>
+        </MudStack>
+        @if (!string.IsNullOrEmpty(base64String))
+        {
+            <div style="width: 300px">
+                <MudCard>
+                    <MudCardContent>
+                        <MudImage Src="@base64String" Fluid />
+                     </MudCardContent>
+                 </MudCard>
+            </div>
+        }
+        @if(response != null)
+        {
+            <MudCard>
+                <MudCardContent>
+                    <MudText>This image is part of the class <strong style=@($"color: {Colors.Green.Default}")>@response?.Prediction</strong>, with a confidence score of <strong style=@($"color: {Colors.Green.Default}")>@(Math.Round(response!.Confidence, 2))</strong></MudText>
+                </MudCardContent>
+            </MudCard>
+        }
+        else if (!string.IsNullOrEmpty(httpError))
+        {
+            <MudCard>
+                <MudCardContent>
+                    <MudText Color="Color.Error">@httpError</MudText>
+                </MudCardContent>
+            </MudCard>
+        }
+    </MudStack>
+</MudForm>
