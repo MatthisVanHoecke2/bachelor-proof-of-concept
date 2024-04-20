@@ -16,6 +16,8 @@ Once Python has been installed, make sure you run the following command from the
 
     pip install -r requirements.txt
 
+    pip install llama-index-embeddings-ollama
+
 While that is running, we can install the **Ollama** server to communicate with a Large Language Model.<br>
 Navigate to [Ollama](https://ollama.com/) and click `Download`, then run the installer and wait for the installation to finish. 
 
