@@ -39,11 +39,14 @@ def create_and_train_model(train_ds: tf.data.Dataset, val_ds: tf.data.Dataset, c
 # Create or load the model from the saved folder
 def create_or_load_model(train_ds, val_ds, class_names):
     route = "cnn/model/saved/model.keras"
+    folder = "cnn/model/saved"
     exists = os.path.isfile(route)
 
     if(exists):
       model = load_model(filepath=route, compile=True)
     else:
+      if not os.path.exists(folder):
+        os.mkdir(folder)
       model: Sequential = create_and_train_model(train_ds, val_ds, class_names)
       model.save(route)
     return model
