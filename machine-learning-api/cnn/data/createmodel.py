@@ -36,6 +36,7 @@ def create_and_train_model(train_ds: tf.data.Dataset, val_ds: tf.data.Dataset, c
 
   return model
 
+# Create or load the model from the saved folder
 def create_or_load_model(train_ds, val_ds, class_names):
     route = "cnn/model/saved/model.keras"
     exists = os.path.isfile(route)

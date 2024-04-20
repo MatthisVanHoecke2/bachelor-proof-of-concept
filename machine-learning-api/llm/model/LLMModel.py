@@ -4,6 +4,7 @@ from ..rag.pipeline import build_rag_pipeline
 import time
 import threading
 
+# Timeout in seconds, default 5 minutes
 TIMEOUT = 300
 
 # Wrapper class for LLMs
@@ -19,6 +20,7 @@ class LLMModel():
     thread = threading.Thread(target=self.start_timer, args=(), kwargs={})
     thread.start()
 
+  # Start timeout timer, closes session when it hits 0
   def start_timer(self):
     while(self.timer > 0 and self.paused == False):
       time.sleep(1)
@@ -27,6 +29,7 @@ class LLMModel():
         self.stop_callback(self.uuid)
         print("Session expired")
 
+  # Reset timeout timer
   def reset_timer(self):
     self.timer = TIMEOUT
     self.paused = False

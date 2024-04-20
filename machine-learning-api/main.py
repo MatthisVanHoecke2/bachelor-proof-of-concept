@@ -4,7 +4,7 @@ from llm.model.LLMService import LLMService, Prompt
 from cnn.model.CNNModel import CNNModel
 import io
 
-# Create a FastAPI instance
+# Create a FastAPI instance for communication with the client
 app = FastAPI()
 
 # Allow cors cross-origins

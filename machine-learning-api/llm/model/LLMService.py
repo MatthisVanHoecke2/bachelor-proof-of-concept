@@ -34,6 +34,7 @@ class LLMService:
       return "Invalid UUID"
     return selected.getResponse(prompt.value)
 
+  # Find model in list of active models based on uuid
   def __find_model(self, uuid: str) -> Optional[LLMModel]:
     for model in self.models:
         if(str(model.getUUID()) == uuid):
