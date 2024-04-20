@@ -56,7 +56,10 @@ The following routes are available to communicate with the API:
     "1e2b49d6-f33c-41f6-b461-1ad2fe7f9574"
 
 #### Request
-`GET /llm/stop/{uuid}` - Stops a specific session with a language model
+`GET /llm/stop/{llm_session_uuid}` - Stops a specific session with a language model<br>
+**Curl**
+
+    curl --location 'http://localhost:8000/llm/stop/{llm_session_uuid}'
 
 #### Response
     HTTP/1.1 200 OK
@@ -69,9 +72,16 @@ The following routes are available to communicate with the API:
     "Closed chat"
 
 #### Request
-`POST /llm/response/{uuid}` - Get a response from a language model<br>
+`POST /llm/response/{llm_session_uuid}` - Get a response from a language model<br>
 
     {"value":"Hello."}
+**Curl**
+
+    curl --location --request GET 'http://localhost:8000/llm/response/{llm_session_uuid}' \
+    --header 'Content-Type: application/json' \
+    --data '{
+        "value": "Hello."
+    }'
 
 #### Response
     HTTP/1.1 200 OK
@@ -90,6 +100,27 @@ The following routes are available to communicate with the API:
           }
       ],
       "output":"The author of this project is Matthis Van Hoecke"
+    }
+
+#### Request
+`POST /cnn/upload` - Classify the given picture of a flower<br>
+
+**Curl**
+
+    curl --location 'http://localhost:8000/cnn/upload' \
+    --form 'file=@"{image_file_path}"'
+
+#### Response
+    HTTP/1.1 200 OK
+    Date: Thu, 24 Feb 2011 12:36:30 GMT
+    Status: 200 OK
+    Connection: close
+    Content-Type: application/json
+    Content-Length: 53
+
+    {
+        "prediction": "daisy",
+        "confidence": 98.42294454574585
     }
 
 ## Technologies
