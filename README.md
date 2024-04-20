@@ -1,5 +1,5 @@
 # bachelor-proof-of-concept
-This is the proof-of-concept for the Bachelor's thesis 'Optimization of AI Integration in Web Applications'. This PoC aims to prove the Hypothesis that we can integrate AI in web applications using some of the technologies mentioned in the thesis.
+This is the proof-of-concept for the Bachelor's thesis 'Optimization of AI Integration in Web Applications'. This PoC aims to prove the hypothesis that we can integrate AI in web applications using some of the technologies mentioned in the thesis.
 
 ## Usage
 To run this project, please complete all the steps in the following documents:
