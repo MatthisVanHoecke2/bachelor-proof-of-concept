@@ -1,6 +1,9 @@
 # bachelor-proof-of-concept client
 This is the front-end of the project, otherwise known as the web application.
 
+## Setup - Mac
+Before starting the client, we need to install dotnet on our pc. Navigate to [this page](https://dotnet.microsoft.com/en-us/download) and download dotnet.
+
 ## Running
 The client application does not need additional setup and works out-of-the-box.<br>
 Before running the application, please make sure your terminal is located in the current directory.
