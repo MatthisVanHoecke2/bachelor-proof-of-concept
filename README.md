@@ -5,3 +5,6 @@ This is the proof-of-concept for the Bachelor's thesis 'Optimization of AI Integ
 To run this project, please complete all the steps in the following documents:
 - [Install and run the API](/machine-learning-api/README.md)
 - [Install and run the client](/client/README.md)
+
+## Feedback
+Please provide some feedback [here](https://forms.gle/jwm5AQCiHDB29Lwv5).
