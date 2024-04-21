@@ -14,7 +14,7 @@ Navigate to [Python](https://www.python.org/downloads/) and click `Download`, th
 
 Once Python has been installed, make sure you run the following command from the same directory as this document:
 
-    pip install -r requirements.txt
+    pip3 install -r requirements.txt
 
 While that is running, we can install the **Ollama** server to communicate with a Large Language Model.<br>
 Navigate to [Ollama](https://ollama.com/) and click `Download`, then run the installer and wait for the installation to finish. 
