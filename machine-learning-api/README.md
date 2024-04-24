@@ -19,6 +19,10 @@ Once Python has been installed, make sure you run the following command from the
 While that is running, we can install the **Ollama** server to communicate with a Large Language Model.<br>
 Navigate to [Ollama](https://ollama.com/) and click `Download`, then run the installer and wait for the installation to finish. 
 
+Once Ollama has been downloaded run the following command to download the modelm
+
+    ollama pull llama2
+
 ## Running
 Before we can run our application, we first need to start ollama.
 
