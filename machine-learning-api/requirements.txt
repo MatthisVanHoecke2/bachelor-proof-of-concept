@@ -10,4 +10,5 @@ pydantic==2.7.0
 tensorflow==2.16.1
 llama-index-embeddings-ollama
 llama-index-vector-stores-chroma
+llama-index-llms-langchain
 python-multipart
