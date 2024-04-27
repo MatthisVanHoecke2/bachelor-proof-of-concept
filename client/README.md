@@ -33,4 +33,5 @@ Once the model has started, you can send messages through the message box at the
 
 
 ## Technologies
+[.NET](https://dotnet.microsoft.com/en-us/learn/dotnet/what-is-dotnet) - Application platform supported by microsoft
 [MudBlazor](https://mudblazor.com/) - Framework for adding premade components
