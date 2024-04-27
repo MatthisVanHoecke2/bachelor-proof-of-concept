@@ -15,9 +15,9 @@ To start the application, please execute the following command:
 The client can now be viewed at https://localhost:7133
 
 ## Usage
-The author has added two main features for is proof-of-concept project:
-- Large Language Model
-- Image Recognition
+The author has added two main features for this proof-of-concept project:
+- Chatbot with a Large Language Model
+- Image Recognition with a Convolutional Neural Network
 
 ### Large Language model
 The author implemented the Large Language Model LLaMa2 from Meta in this application to be used as an AI assistant.<br>
