@@ -1,7 +1,7 @@
 from fastapi import FastAPI, File, UploadFile, HTTPException
 from fastapi.middleware.cors import CORSMiddleware
 from llm.model.LLMService import LLMService, Prompt
-from cnn.model.CNNModel import CNNModel
+from cnn.model.CNNModel import CNNInstance
 import io
 
 # Create a FastAPI instance for communication with the client
@@ -20,7 +20,7 @@ app.add_middleware(
 model_service = LLMService()
 
 # Create CNNModel instance
-cnn_model = CNNModel()
+cnn_model = CNNInstance()
 
 @app.post("/cnn/upload")
 async def upload(file: UploadFile = File()):

@@ -8,7 +8,7 @@ import numpy as np
 from PIL import Image
 from cnn.data.parameters import img_height, img_width
 
-class CNNModel():
+class CNNInstance():
   def __init__(self):
     train_ds, val_ds, class_names = load_dataset()
     self.class_names = class_names
